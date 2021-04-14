@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeMo</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="body__container">
+
+    <!-- HEADER -->
+    <header class="section">
+        <div class="container">
+
+            <h1 class="title header__title">MeMo</h1>
+            
+            <button class="btn add-category-button">카테고리 추가하기</button>
+
+        </div>
+    </header>
+
+    <!-- ADD CATEGORY -->
+    <article class="section section__add-category">
+        <div class="container">
+
+            <div class="add-category__enter-section">
+                <p class="category__color-picker">
+                    <label for="enter-color" class="category__enter-color-label">카테고리의 배경색상을 선택해주세요.</label>
+                    <input type="color" id="enter-color" class="category__enter-color">
+                </p>
+
+                <input type="text" class="category__enter-title" id="enter-title" placeholder="카테고리의 제목을 작성해주세요.">
+
+                <textarea id="enter-description" cols="30" rows="10" class="category__enter-description" placeholder="간략한 설명을 작성해주세요."></textarea>
+            </div>
+
+            <button class="btn close-add-category"></button>
+
+            <button class="btn add-category-button">카테고리 추가하기</button>
+
+        </div>
+    </article>
+
+    <!-- CATEGORY -->
+    <article class="section section__category">
+        <div class="container">
+
+            <div class="category__image"></div>
+
+            <div class="category__summary">
+                <h2 class="title category__title">HTML</h2>
+                <p class="category__description">
+                    html 관련 내용이 들어가 있다.
+                </p>
+            </div>
+
+            <div class="category__number-of-items">6</div>
+
+        </div>
+    </article>
+
+</div>
+</body>
+</html>
