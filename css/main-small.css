@@ -24,6 +24,7 @@
 
 .section__show-memo .show-memo__item .memo__summary .memo__control {
     font-size: 14px;
+    opacity: 1;
 }
 
 .section__show-memo .show-memo__item .memo__summary .memo__description,

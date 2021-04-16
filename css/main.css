@@ -181,7 +181,7 @@ header.section .add-memo-button:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* backdrop-filter: blur(10px); */
+    backdrop-filter: blur(10px);
 }
 
 .section__add-memo .add-memo__container {
