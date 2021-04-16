@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main-medium.css" media="(max-width: 950px)">
+    <link rel="stylesheet" href="css/main-small.css" media="(max-width: 700px)">
+    <link rel="stylesheet" href="css/main-exsmall.css" media="(max-width: 500px)">
+
+    <!-- CLASSLIST -->
     <link rel="stylesheet" href="css/classList.css">
 </head>
 <body>
@@ -51,33 +56,37 @@
 
     <!-- ADD A MEMO -->
     <article class="section section__add-memo hide">
+        <div class="add-memo__container">
 
-        <button class="btn memo-close-button">
-            <img src="images/close-icon.png" alt="close icon">
-        </button>
+            <button class="btn memo-close-button">
+                <img src="images/close-icon.png" alt="close icon">
+            </button>
 
-        <div class="add-memo__enter">
-            <div class="select-category-area">
-                <button class="btn select-category clearfix">
-                    <strong class="selected-option float--left">카테고리</strong>
-                    <img class="float--right" src="" alt="">
-                </button>
+            <div class="add-memo__enter">
+                <div class="select-category-area">
+                    <button class="btn select-category clearfix">
+                        <strong class="selected-option float--left">카테고리</strong>
+                        <img class="float--right" src="" alt="">
+                    </button>
 
-                <ul class="category-option-container hide">
-                    <li class="category-option">카테고리 없음</li>
-                </ul>
+                    <ul class="category-option-container hide">
+                        <li class="category-option">카테고리 없음</li>
+                    </ul>
+                </div>
+
+                <p class="enter-url-container">
+                    <span class="input-title">URL</span>
+                    <input type="url" class="input-text memo__enter-url" id="enter-url"
+                        placeholder="저장할 페이지의 URL을 적어주세요.">
+                </p>
+
+                <textarea id="enter-description" cols="30" rows="10" class="input-text memo__enter-description"
+                    placeholder="간략한 설명을 작성해주세요."></textarea>
             </div>
 
-            <p class="enter-url-container">
-                <span class="input-title">URL</span>
-                <input type="url" class="input-text memo__enter-url" id="enter-url" placeholder="저장할 페이지의 URL을 적어주세요.">
-            </p>
+            <button class="btn add-memo-button">추가하기</button>
 
-            <textarea id="enter-description" cols="30" rows="10" class="input-text memo__enter-description" placeholder="간략한 설명을 작성해주세요."></textarea>
         </div>
-
-        <button class="btn add-memo-button">추가하기</button>
-            
     </article>
 
     <!-- SHOW MEMO -->
@@ -90,15 +99,53 @@
                 <div class="link__image"></div>
                 
                 <div class="memo__summary clearfix">
-                    <h3 class="memo__title">
-                        <a href="#">HTML</a>
-                    </h3>
+                    <div class="memo__header clearfix">
+                        <h3 class="memo__title float--left">
+                            <a href="#">HTML</a>
+                        </h3>
+
+                        <div class="memo__control float--right">
+                            <p class="memo__modify">수정</p>
+                            <p class="memo__delete">삭제</p>
+                        </div>
+                    </div>
 
                     <p class="memo__description">
                         html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
                     </p>
 
+                    <hr class="memo__text-division">
+
                     <p class="memo__comment">
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
+                        html 관련 내용이 들어가 있다.
                         html 관련 내용이 들어가 있다.
                     </p>
     

@@ -1,0 +1,83 @@
+/* COMMON */
+/* SECTION & CONTAINER */
+.section .container {
+    width: 95%;
+}
+
+/* INPUT */
+.input-text {
+    font-size: 14px;
+}
+
+/* HEADER */
+header.section {
+    height: 300px;
+}
+
+header.section .category-menu-area .show-menu-button {
+    width: 60px;
+}
+
+header.section .category-menu-area .category-menu {
+    padding: 20px 0;
+}
+
+header.section .category-menu-area .category-menu .category {
+    padding: 0 15px;
+    font-size: 14px;
+}
+
+header.section .add-memo-button {
+    font-size: 14px;
+    padding: 8px 15px;
+}
+
+/* ADD MEMO */
+.section__add-memo .add-memo__container {
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.section__add-memo .memo-close-button {
+    width: 40px;
+    top: 20px;
+    right: 20px;
+}
+
+.section__add-memo .select-category-area .select-category {
+    width: 150px;
+    height: 30px;
+    padding: 0 15px;
+    font-size: 14px;
+}
+
+.section__add-memo .select-category-area .category-option-container {
+    width: 150px;
+    top: 30px;
+    font-size: 14px;
+}
+
+.section__add-memo .add-memo__enter .enter-url-container {
+    margin: 15px 0;
+}
+
+#enter-description {
+    height: 150px;
+}
+
+.section__add-memo .add-memo-button {
+    width: 120px;
+    font-size: 14px;
+}
+
+/* SHOW MEMO */
+.section__show-memo .show-memo__item .link__image {
+    width: 120px;
+    height: 120px;
+}
+
+.section__show-memo .category-title {
+    font-size: 25px;
+}

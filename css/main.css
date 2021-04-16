@@ -110,6 +110,7 @@ header.section .category-menu-area {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 9;
 }
 
 header.section .category-menu-area .show-menu-button {
@@ -170,19 +171,27 @@ header.section .add-memo-button:focus {
 
 /* ADD MEMO */
 .section__add-memo {
-    width: 500px;
-    height: 450px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
-    background: linear-gradient(to top left, #faf6e8, #fffef7);
-    border-radius: 20px;
     z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* backdrop-filter: blur(10px); */
+}
+
+.section__add-memo .add-memo__container {
+    width: 500px;
+    height: 450px;
     padding: 30px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to top left, #faf6e8, #fffef7);
+    border-radius: 20px;
+    position: relative;
 }
 
 .section__add-memo .memo-close-button {
@@ -205,7 +214,6 @@ header.section .add-memo-button:focus {
     width: 180px;
     height: 40px;
     padding: 0 15px;
-    text-align: left;
     border-radius: 10px;
     background: #fce77d;
     display: flex;
@@ -219,6 +227,7 @@ header.section .add-memo-button:focus {
 .section__add-memo .select-category-area .category-option-container {
     padding: 5px 0;
     box-sizing: border-box;
+    overflow: hidden;
     width: 200px;
     background: linear-gradient(to top left, #faf6e8, #fff4cb);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
@@ -237,6 +246,10 @@ header.section .add-memo-button:focus {
     cursor: pointer;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+.section__add-memo .select-category-area .category-option-container .category-option:hover {
+    background: #fce77d;
 }
 
 .section__add-memo .add-memo__enter .enter-url-container {
@@ -279,19 +292,17 @@ header.section .add-memo-button:focus {
 
 .section__show-memo .show-memo__item {
     width: 100%;
-    min-height: 150px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     overflow: hidden;
-}
-
-.section__show-memo .show-memo__item {
     display: flex;
+    padding: 30px;
+    box-sizing: border-box;
 }
 
 .section__show-memo .show-memo__item .link__image {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     background: #fce77d;
     border-radius: 20px;
 }
@@ -303,7 +314,7 @@ header.section .add-memo-button:focus {
 .section__show-memo .show-memo__item .memo__summary {
     width: 100%;
     flex: 1;
-    padding: 30px;
+    margin-left: 30px;
     box-sizing: border-box;
 }
 
@@ -313,19 +324,51 @@ header.section .add-memo-button:focus {
     margin-bottom: 15px;
 }
 
+.section__show-memo .show-memo__item .memo__summary .memo__title a {
+    text-decoration: none;
+    color: #333;
+}
+
+.section__show-memo .show-memo__item .memo__summary .memo__control {
+    display: flex;
+    opacity: 0;
+    transition-duration: 0.3s;
+}
+
+.section__show-memo .show-memo__item .memo__summary .memo__control .memo__modify {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.section__show-memo .show-memo__item .memo__summary .memo__control .memo__delete {
+    color:#f96167;
+    cursor: pointer;
+}
+
+.section__show-memo .show-memo__item:hover .memo__control {
+    opacity: 1;
+}
+
 .section__show-memo .show-memo__item .memo__summary .memo__description,
 .section__show-memo .show-memo__item .memo__summary .memo__comment {
     display: -webkit-box;
-    -webkit-line-clamp: 6;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     overflow: hidden;
+    box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
 .section__show-memo .show-memo__item .memo__summary .memo__description {
-    margin-bottom: 15px;
+    color: #a8a8a8;
+}
+
+.section__show-memo .show-memo__item .memo__summary .memo__text-division {
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .section__show-memo .show-memo__item .memo__summary .date-added {
-    color: #898989;
+    color: #a8a8a8;
 }

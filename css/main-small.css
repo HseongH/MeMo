@@ -1,0 +1,36 @@
+/* ADD MEMO */
+.section__add-memo .add-memo__container {
+    width: 400px;
+    height: 400px;
+}
+
+/* SHOW MEMO */
+.section__show-memo .show-memo__item {
+    padding: 20px;
+}
+
+.section__show-memo .show-memo__item .link__image {
+    width: 150px;
+    height: 150px;
+}
+
+.section__show-memo .show-memo__item .memo__summary {
+    margin-left: 20px;
+}
+
+.section__show-memo .show-memo__item .memo__summary .memo__title {
+    font-size: 18px;
+}
+
+.section__show-memo .show-memo__item .memo__summary .memo__control {
+    font-size: 14px;
+}
+
+.section__show-memo .show-memo__item .memo__summary .memo__description,
+.section__show-memo .show-memo__item .memo__summary .memo__comment {
+    font-size: 14px;
+}
+
+.section__show-memo .show-memo__item .memo__summary .date-added {
+    font-size: 14px;
+}
