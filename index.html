@@ -31,24 +31,44 @@
 
             <div class="category-menu-area">
                 <button class="btn show-menu-button">
-                    <img src="images/menu-icon.png" alt="menu icon">
+                    <img src="https://img.icons8.com/windows/64/000000/menu--v1.png" alt="menu icon" />
                 </button>
 
-                <ul class="category-menu hide">
+                <ul class="category-menu hide clearfix">
                     <li class="category">전체보기
                         <span class="memo-count">(0)</span>
                     </li>
-                    <li class="category">HTML
+                    <li class="category clearfix">
+                        <p class="category-title float--left">HTML</p>
+                        <span class="memo-count">(0)</span>
+                        <button class="category-edit btn float--right">
+                            <img src="https://img.icons8.com/windows/32/000000/menu-2.png" alt="edit icon" />
+                        </button>
+                    </li>
+                    <li class="category clearfix">
+                        <p class="category-title float--left">CSS</p>
+                        <span class="memo-count">(0)</span>
+                        <button class="category-edit btn float--right">
+                            <img src="https://img.icons8.com/windows/32/000000/menu-2.png" alt="edit icon" />
+                        </button>
+                    </li>
+                    <li class="category clearfix">
+                        <p class="category-title float--left">JAVASCRIPT</p>
+                        <span class="memo-count">(0)</span>
+                        <button class="category-edit btn float--right">
+                            <img src="https://img.icons8.com/windows/32/000000/menu-2.png" alt="edit icon" />
+                        </button>
+                        <div class="category-edit__control hide">
+                            <button class="btn edit--modify-button">수정</button>
+                            <button class="btn edit--delete-button">삭제</button>
+                        </div>
+                    </li>
+                    <li class="category">카테고리 없음
                         <span class="memo-count">(0)</span>
                     </li>
-                    <li class="category">CSS
-                        <span class="memo-count">(0)</span>
-                    </li>
-                    <li class="category">JAVASCRIPT
-                        <span class="memo-count">(0)</span>
-                    </li>
-                    <li class="category">분류없음
-                        <span class="memo-count">(0)</span>
+                    <li class="category add-category">
+                        카테고리 추가
+                        <img src="https://img.icons8.com/small/16/000000/add.png" alt="added icon"/>
                     </li>
                 </ul>
             </div>
@@ -63,14 +83,14 @@
         <div class="add-memo__container">
 
             <button class="btn memo-close-button">
-                <img src="images/close-icon.png" alt="close icon">
+                <img src="https://img.icons8.com/windows/32/000000/delete-sign.png" alt="delete icon" />
             </button>
 
             <div class="add-memo__enter">
                 <div class="select-category-area">
-                    <button class="btn select-category clearfix">
-                        <strong class="selected-option float--left">카테고리</strong>
-                        <img class="float--right" src="" alt="">
+                    <button class="btn select-category">
+                        <strong class="selected-option">카테고리</strong>
+                        <img class="select-arrow" src="https://img.icons8.com/fluent-systems-filled/48/000000/triangle.png" alt="select arrow"/>
                     </button>
 
                     <ul class="category-option-container hide">
@@ -109,8 +129,13 @@
                         </h3>
 
                         <div class="memo__control float--right">
-                            <p class="memo__modify">수정</p>
-                            <p class="memo__delete">삭제</p>
+                            <button class="btn memo__modify-button">
+                                <img src="https://img.icons8.com/windows/32/000000/edit--v1.png" alt="edit icon">
+                            </button>
+
+                            <button class="btn memo__delete-button">
+                                <img src="https://img.icons8.com/windows/32/000000/delete-sign.png" alt="delete icon">
+                            </button>
                         </div>
                     </div>
 

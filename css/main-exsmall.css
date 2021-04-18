@@ -15,7 +15,7 @@ header.section {
 }
 
 header.section .category-menu-area .show-menu-button {
-    width: 60px;
+    width: 40px;
 }
 
 header.section .category-menu-area .category-menu {
@@ -41,7 +41,7 @@ header.section .add-memo-button {
 }
 
 .section__add-memo .memo-close-button {
-    width: 40px;
+    width: 25px;
     top: 20px;
     right: 20px;
 }
@@ -51,6 +51,10 @@ header.section .add-memo-button {
     height: 30px;
     padding: 0 15px;
     font-size: 14px;
+}
+
+.section__add-memo .select-category-area .select-category .select-arrow {
+    width: 10px;
 }
 
 .section__add-memo .select-category-area .category-option-container {
