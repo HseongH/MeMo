@@ -259,11 +259,6 @@ header.section .add-memo-button:focus {
 .section__add-memo .select-category-area .select-category .select-arrow {
     width: 15px;
     transform: rotate(180deg);
-    transition-duration: 0.3s;
-}
-
-.section__add-memo .select-category-area .select-category .select-arrow.select--activate {
-    transform: rotate(0);
 }
 
 .section__add-memo .select-category-area .category-option-container {

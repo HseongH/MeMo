@@ -19,8 +19,3 @@ const Memo = {
         return parent;
     }
 };
-
-// COMMON VARIABLE
-Memo.categoryMenuArea = document.querySelector('.category-menu-area');
-Memo.categoryMenu = document.querySelector('.category-menu');
-Memo.categoryOptionCon = document.querySelector('.category-option-container');

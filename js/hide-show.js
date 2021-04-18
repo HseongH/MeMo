@@ -1,15 +1,24 @@
 Memo.createObject('hideShow');
 
-Memo.hideShow.toggleClass = (elem, apply) => {
+Memo.hideShow.toggleClass = function(elem, apply) {
     elem.classList.toggle(apply);
 }
 
-Memo.hideShow.addClass = (elem, apply) => {
+Memo.hideShow.addClass = function(elem, apply) {
     elem.classList.add(apply);
 }
 
-Memo.hideShow.removeClass = (elem, apply) => {
+Memo.hideShow.removeClass = function(elem, apply) {
     elem.classList.remove(apply);
+}
+
+Memo.hideShow.hideElementWhenClickAnywhere = function(elem) {
+    const target = event.target;
+    const arg = Array.prototype.slice.call(arguments, 1);
+
+    if (target.closest(arg)) return;
+
+    elem.classList.add('hide');
 }
 
 // BUTTON
@@ -21,18 +30,21 @@ Memo.hideShow.selectArrow = document.querySelector('.select-arrow');
 
 // ELEMENT
 Memo.hideShow.addMemo = document.querySelector('.section__add-memo');
+Memo.hideShow.categoryMenuArea = document.querySelector('.category-menu-area');
+Memo.hideShow.categoryMenu = document.querySelector('.category-menu');
+Memo.hideShow.categoryOptionCon = document.querySelector('.category-option-container');
 
 // CATEGORY MENU CONTROL
 if (window.innerWidth > 700) {
-    Memo.categoryMenuArea.addEventListener('mouseover', () => {
-        Memo.hideShow.removeClass(Memo.categoryMenu, 'hide');
+    Memo.hideShow.categoryMenuArea.addEventListener('mouseover', () => {
+        Memo.hideShow.removeClass(Memo.hideShow.categoryMenu, 'hide');
     });
-    Memo.categoryMenuArea.addEventListener('mouseout', () => {
-        Memo.hideShow.addClass(Memo.categoryMenu, 'hide');
+    Memo.hideShow.categoryMenuArea.addEventListener('mouseout', () => {
+        Memo.hideShow.addClass(Memo.hideShow.categoryMenu, 'hide');
     });
 } else {
     Memo.hideShow.showMenuBtn.addEventListener('click', () => {
-        Memo.hideShow.toggleClass(Memo.categoryMenu, 'hide');
+        Memo.hideShow.toggleClass(Memo.hideShow.categoryMenu, 'hide');
     });
 }
 
@@ -42,12 +54,17 @@ Memo.hideShow.addMemoBtn.addEventListener('click', () => {
 });
 Memo.hideShow.addMemoCloseBtn.addEventListener('click', () => {
     Memo.hideShow.addClass(Memo.hideShow.addMemo, 'hide');
-    Memo.hideShow.addClass(Memo.categoryOptionCon, 'hide');
-    Memo.hideShow.removeClass(Memo.hideShow.selectArrow, 'select--activate');
+    Memo.hideShow.addClass(Memo.hideShow.categoryOptionCon, 'hide');
 });
 
 // SELECT CATEGORY OPTION CONTROL
 Memo.hideShow.selectCategory.addEventListener('click', () => {
-    Memo.hideShow.toggleClass(Memo.categoryOptionCon, 'hide');
-    Memo.hideShow.toggleClass(Memo.hideShow.selectArrow, 'select--activate');
+    Memo.hideShow.toggleClass(Memo.hideShow.categoryOptionCon, 'hide');
+});
+
+// HIDE ELEMENT WHEN CLICKED ANYWHERE
+document.addEventListener('click', () => {
+    Memo.hideShow.hideElementWhenClickAnywhere(Memo.hideShow.addMemo, '.add-memo__container', '.add-memo-button');
+    Memo.hideShow.hideElementWhenClickAnywhere(Memo.hideShow.categoryOptionCon, '.select-category', '.category-option-container');
+    Memo.hideShow.hideElementWhenClickAnywhere(Memo.hideShow.categoryMenu, '.category-menu-area');
 });
