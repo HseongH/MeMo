@@ -17,8 +17,11 @@
     <link rel="stylesheet" href="../static/css/classList.css">
 
     <!-- SCRIPT -->
-    <script src="../js/init.js" defer></script>
-    <script src="../js/hide-show.js" defer></script>
+    <script src="../static/js/init.js" defer></script>
+    <script src="../static/js/hide-show.js" defer></script>
+    <script src="../static/js/category/index.js" defer></script>
+    <script src="../static/js/category/add.js" defer></script>
+    <script src="../static/js/category/read.js" defer></script>
 </head>
 <body>
 <div class="body__container">
@@ -34,43 +37,50 @@
                     <img src="https://img.icons8.com/windows/64/000000/menu--v1.png" alt="menu icon" />
                 </button>
 
-                <ul class="category-menu hide clearfix">
-                    <li class="category">전체보기
-                        <span class="memo-count">(0)</span>
-                    </li>
-                    <li class="category clearfix">
-                        <p class="category-title float--left">HTML</p>
-                        <span class="memo-count">(0)</span>
-                        <button class="category-edit btn float--right">
-                            <img src="https://img.icons8.com/windows/32/000000/menu-2.png" alt="edit icon" />
-                        </button>
-                    </li>
-                    <li class="category clearfix">
-                        <p class="category-title float--left">CSS</p>
-                        <span class="memo-count">(0)</span>
-                        <button class="category-edit btn float--right">
-                            <img src="https://img.icons8.com/windows/32/000000/menu-2.png" alt="edit icon" />
-                        </button>
-                    </li>
-                    <li class="category clearfix">
-                        <p class="category-title float--left">JAVASCRIPT</p>
-                        <span class="memo-count">(0)</span>
-                        <button class="category-edit btn float--right">
-                            <img src="https://img.icons8.com/windows/32/000000/menu-2.png" alt="edit icon" />
-                        </button>
-                        <div class="category-edit__control hide">
-                            <button class="btn edit--modify-button">수정</button>
-                            <button class="btn edit--delete-button">삭제</button>
-                        </div>
-                    </li>
-                    <li class="category">카테고리 없음
-                        <span class="memo-count">(0)</span>
-                    </li>
-                    <li class="category add-category">
+                <div class="category-menu hide">
+                    <nav>
+                        <ul class="memo-category">
+                            <li class="category clearfix">
+                                <h3 class="category-title float--left">전체보기</h3>
+                                <span class="memo-count">(0)</span>
+                            </li>
+                            <li class="category clearfix">
+                                <h3 class="category-title float--left">HTML</h3>
+                                <span class="memo-count">(0)</span>
+                                <button class="category-edit btn float--right">
+                                    <img src="https://img.icons8.com/windows/32/000000/menu-2.png" alt="edit icon" />
+                                </button>
+                            </li>
+                            <li class="category clearfix">
+                                <h3 class="category-title float--left">CSS</h3>
+                                <span class="memo-count">(0)</span>
+                                <button class="category-edit btn float--right">
+                                    <img src="https://img.icons8.com/windows/32/000000/menu-2.png" alt="edit icon" />
+                                </button>
+                            </li>
+                            <li class="category clearfix">
+                                <h3 class="category-title float--left">JAVASCRIPT</h3>
+                                <span class="memo-count">(0)</span>
+                                <button class="category-edit btn float--right">
+                                    <img src="https://img.icons8.com/windows/32/000000/menu-2.png" alt="edit icon" />
+                                </button>
+                                <div class="category-edit__control hide">
+                                    <button class="btn edit--modify-button">수정</button>
+                                    <button class="btn edit--delete-button">삭제</button>
+                                </div>
+                            </li>
+                            <li class="category clearfix">
+                                <h3 class="category-title float--left">카테고리 없음</h3>
+                                <span class="memo-count">(0)</span>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <button class="btn category add-category">
                         카테고리 추가
                         <img src="https://img.icons8.com/small/16/000000/add.png" alt="added icon"/>
-                    </li>
-                </ul>
+                    </button>
+                </div>
             </div>
             
             <button class="btn add-memo-button">메모 추가하기</button>
@@ -122,7 +132,7 @@
             <h2 class="title category-title">HTML</h2>
 
             <article class="show-memo__item">
-                <div class="link__image"></div>
+                <!-- <div class="link__image"></div> -->
                 
                 <div class="memo__summary clearfix">
                     <div class="memo__header clearfix">

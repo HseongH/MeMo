@@ -1,3 +1,8 @@
+/* HEADER */
+header.section .category-menu-area .show-menu-button {
+    width: 40px;
+}
+
 /* ADD MEMO */
 .section__add-memo .add-memo__container {
     width: 400px;
@@ -12,10 +17,7 @@
 .section__show-memo .show-memo__item .link__image {
     width: 150px;
     height: 150px;
-}
-
-.section__show-memo .show-memo__item .memo__summary {
-    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .section__show-memo .show-memo__item .memo__summary .memo__title {

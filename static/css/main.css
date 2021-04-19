@@ -186,6 +186,17 @@ header.section .category-menu-area .category-menu .category:hover {
     background: #fce77d;
 }
 
+#enter-category-input {
+    padding: 0 5px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+#enter-category-input:focus {
+    box-shadow: none;
+    border-bottom: 1px solid #000;
+}
+
 header.section .add-memo-button {
     position: absolute;
     bottom: 0;
@@ -342,12 +353,12 @@ header.section .add-memo-button:focus {
     height: 200px;
     background: #fce77d;
     border-radius: 20px;
+    margin-right: 30px;
 }
 
 .section__show-memo .show-memo__item .memo__summary {
     width: 100%;
     flex: 1;
-    margin-left: 30px;
     box-sizing: border-box;
 }
 

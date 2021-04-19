@@ -14,10 +14,6 @@ header.section {
     height: 300px;
 }
 
-header.section .category-menu-area .show-menu-button {
-    width: 40px;
-}
-
 header.section .category-menu-area .category-menu {
     padding: 20px 0;
 }

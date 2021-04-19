@@ -35,18 +35,9 @@ Memo.hideShow.categoryMenu = document.querySelector('.category-menu');
 Memo.hideShow.categoryOptionCon = document.querySelector('.category-option-container');
 
 // CATEGORY MENU CONTROL
-if (window.innerWidth > 700) {
-    Memo.hideShow.categoryMenuArea.addEventListener('mouseover', () => {
-        Memo.hideShow.removeClass(Memo.hideShow.categoryMenu, 'hide');
-    });
-    Memo.hideShow.categoryMenuArea.addEventListener('mouseout', () => {
-        Memo.hideShow.addClass(Memo.hideShow.categoryMenu, 'hide');
-    });
-} else {
-    Memo.hideShow.showMenuBtn.addEventListener('click', () => {
-        Memo.hideShow.toggleClass(Memo.hideShow.categoryMenu, 'hide');
-    });
-}
+Memo.hideShow.showMenuBtn.addEventListener('click', () => {
+    Memo.hideShow.toggleClass(Memo.hideShow.categoryMenu, 'hide');
+});
 
 // ADD MEMO CONTROL
 Memo.hideShow.addMemoBtn.addEventListener('click', () => {
