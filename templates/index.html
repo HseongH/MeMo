@@ -8,17 +8,17 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/main-medium.css" media="(max-width: 950px)">
-    <link rel="stylesheet" href="css/main-small.css" media="(max-width: 700px)">
-    <link rel="stylesheet" href="css/main-exsmall.css" media="(max-width: 500px)">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/main-medium.css" media="(max-width: 950px)">
+    <link rel="stylesheet" href="../static/css/main-small.css" media="(max-width: 700px)">
+    <link rel="stylesheet" href="../static/css/main-exsmall.css" media="(max-width: 500px)">
 
     <!-- CLASSLIST -->
-    <link rel="stylesheet" href="css/classList.css">
+    <link rel="stylesheet" href="../static/css/classList.css">
 
     <!-- SCRIPT -->
-    <script src="js/init.js" defer></script>
-    <script src="js/hide-show.js" defer></script>
+    <script src="../js/init.js" defer></script>
+    <script src="../js/hide-show.js" defer></script>
 </head>
 <body>
 <div class="body__container">
@@ -98,17 +98,19 @@
                     </ul>
                 </div>
 
-                <p class="enter-url-container">
-                    <span class="input-title">URL</span>
-                    <input type="url" class="input-text memo__enter-url" id="enter-url"
-                        placeholder="저장할 페이지의 URL을 적어주세요.">
-                </p>
+                <form action="" method="POST" id="add-memo__enter-form">
+                    <p class="enter-url-container">
+                        <span class="input-title">URL</span>
+                        <input type="url" class="input-text memo__enter-url" id="enter-url"
+                            placeholder="저장할 페이지의 URL을 적어주세요.">
+                    </p>
 
-                <textarea id="enter-description" cols="30" rows="10" class="input-text memo__enter-description"
-                    placeholder="간략한 설명을 작성해주세요."></textarea>
+                    <textarea id="enter-description" cols="30" rows="10" class="input-text memo__enter-description"
+                        placeholder="간략한 설명을 작성해주세요."></textarea>
+                    <button type="submit" class="btn add-memo-button">추가하기</button>
+                </form>
             </div>
 
-            <button class="btn add-memo-button">추가하기</button>
 
         </div>
     </article>
