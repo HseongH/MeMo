@@ -1,0 +1,15 @@
+.Card {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 40px 25px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background: #FCF6F5;
+  margin-bottom: 30px; }
+  .Card .card__container {
+    margin-bottom: 30px; }
+    .Card .card__container:last-child {
+      margin-bottom: 0; }
+  .Card .word .contents {
+    font-size: 2rem; }
+  .Card .example .contents {
+    color: #0063B2; }
