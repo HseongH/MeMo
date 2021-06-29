@@ -1,4 +1,4 @@
-$color: #ADEFD1;
+@import "color";
 
 .Add {
     display: flex;
@@ -20,7 +20,11 @@ $color: #ADEFD1;
 
         &:focus {
             outline: none;
-            border: solid $color;
+            border: solid $primary;
+        }
+
+        &.danger {
+            border: solid $danger;
         }
     }
 

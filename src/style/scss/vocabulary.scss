@@ -1,28 +1,56 @@
-@mixin shadow() {
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
+@import "color";
 
 .Card {
     padding: 40px 25px;
     box-sizing: border-box;
     border-radius: 20px;
-    background: #FCF6F5;
+    background: #fcf6f5;
     margin-bottom: 30px;
+    position: relative;
     @include shadow();
+
+    &:last-child {
+        margin-bottom: 100px;
+    }
 
     .card__container {
         margin-bottom: 30px;
 
-        &:last-child {
+        &:last-of-type {
             margin-bottom: 0;
         }
     }
-    
+
     .word .contents {
         font-size: 2rem;
     }
 
+    .desc .contents {
+        font-size: 1.25rem;
+        color: #666;
+    }
+
     .example .contents {
-        color: #0063B2;
+        color: $primary;
+    }
+
+    .btn-group {
+        position: absolute;
+        top: 40px;
+        right: 25px;
+
+        .btn {
+            background: none;
+            box-shadow: none;
+            padding: 8px;
+        }
+
+        .btn--modify :hover {
+            color: $primary;
+        }
+
+        .btn--delete :hover {
+            color: $danger;
+        }
     }
 }

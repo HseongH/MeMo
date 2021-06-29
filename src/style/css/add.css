@@ -14,7 +14,9 @@
     border-radius: 7px; }
     .Add .input--text:focus {
       outline: none;
-      border: solid #ADEFD1; }
+      border: solid #0063b2; }
+    .Add .input--text.danger {
+      border: solid #fa5252; }
   .Add .btn--submit {
     padding: 8px 30px;
     box-sizing: border-box;

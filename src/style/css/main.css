@@ -15,6 +15,15 @@ a {
   color: #331b3f;
   text-decoration: none; }
 
+.btn {
+  background: #0063b2;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; }
+
 header .logo {
   font-size: 3rem;
   font-weight: 700;
@@ -22,15 +31,6 @@ header .logo {
   margin-bottom: 40px;
   display: flex;
   align-items: center; }
-
-.btn {
-  background: #ADEFD1;
-  color: #331b3f;
-  border: none;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; }
 
 .btn--addVoca {
   display: flex;

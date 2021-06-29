@@ -1,15 +1,33 @@
 .Card {
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 40px 25px;
   box-sizing: border-box;
   border-radius: 20px;
-  background: #FCF6F5;
-  margin-bottom: 30px; }
+  background: #fcf6f5;
+  margin-bottom: 30px;
+  position: relative;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; }
+  .Card:last-child {
+    margin-bottom: 100px; }
   .Card .card__container {
     margin-bottom: 30px; }
-    .Card .card__container:last-child {
+    .Card .card__container:last-of-type {
       margin-bottom: 0; }
   .Card .word .contents {
     font-size: 2rem; }
+  .Card .desc .contents {
+    font-size: 1.25rem;
+    color: #666; }
   .Card .example .contents {
-    color: #0063B2; }
+    color: #0063b2; }
+  .Card .btn-group {
+    position: absolute;
+    top: 40px;
+    right: 25px; }
+    .Card .btn-group .btn {
+      background: none;
+      box-shadow: none;
+      padding: 8px; }
+    .Card .btn-group .btn--modify :hover {
+      color: #0063b2; }
+    .Card .btn-group .btn--delete :hover {
+      color: #fa5252; }

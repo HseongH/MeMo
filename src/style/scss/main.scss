@@ -1,10 +1,4 @@
-$fontColor: #331b3f;
-$btnColor: #ADEFD1;
-
-@mixin flex() {
-    display: flex;
-    align-items: center;
-}
+@import "color";
 
 // COMMON
 * {
@@ -31,22 +25,23 @@ a {
     text-decoration: none;
 }
 
+// BUTTON
+.btn {
+    background: $primary;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    @include shadow();
+}
+
 header .logo {
     font-size: 3rem;
     font-weight: 700;
     height: 100px;
     margin-bottom: 40px;
     @include flex();
-}
-
-.btn {
-    background: $btnColor;
-    color: $fontColor;
-    border: none;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .btn--addVoca {

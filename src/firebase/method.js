@@ -1,13 +1,13 @@
 // LIBRARY
 import { firestore } from "./firebase";
-import { readVoca, createVoca } from "../redux/modules/voca";
+import { readVoca, createVoca, removeVoca } from "../redux/modules/voca";
 
-const vocabulary_db = firestore.collection("vocabulary");
+const vocabularyDB = firestore.collection("vocabulary");
 
 // READ
 export const loadVocaFB = () => {
     return function (dispatch) {
-        vocabulary_db.get().then((docs) => {
+        vocabularyDB.get().then((docs) => {
             const wordData = [];
 
             docs.forEach((doc) => {
@@ -15,7 +15,7 @@ export const loadVocaFB = () => {
                     wordData.push({ id: doc.id, ...doc.data() });
                 }
             });
-            
+
             dispatch(readVoca(wordData));
         });
     };
@@ -24,12 +24,33 @@ export const loadVocaFB = () => {
 // CREATE
 export const addVocaFB = (vocaObj) => {
     return function (dispatch) {
-        vocabulary_db
+        vocabularyDB
             .add(vocaObj)
             .then((docRef) => {
                 vocaObj = { ...vocaObj, id: docRef.id };
 
                 dispatch(createVoca(vocaObj));
+            })
+            .catch((err) => {
+                console.error(err);
+            });
+    };
+};
+
+// UPDATE
+
+// DELETE
+export const removeVocaFB = (index) => {
+    return function (dispatch, getState) {
+        const vocaData = getState().voca.list[index];
+
+        if (!vocaData.id) return;
+
+        vocabularyDB
+            .doc(vocaData.id)
+            .delete()
+            .then((res) => {
+                dispatch(removeVoca(index));
             })
             .catch((err) => {
                 console.error(err);

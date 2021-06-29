@@ -5,7 +5,7 @@ import { Route, Link, Switch, useLocation } from "react-router-dom";
 // COMPONENTS
 import Header from "./Header";
 
-// STORE
+// REDUX
 import { useDispatch } from "react-redux";
 
 // FIREBASE
