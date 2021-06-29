@@ -1,19 +1,22 @@
 // LIBRARY
 import React from "react";
 
+// STORE
+import { useSelector } from "react-redux";
+// import { readVoca } from "../redux/modules/voca";
+
 // STYLE
 import "../style/css/vocabulary.css";
 
 const Vocabulary = (props) => {
-    const list = props.voca;
+    const vocaList = useSelector((state) => state.voca).list;
 
     return (
         <section className="section section--contents">
             <div className="container">
-
-                {list.map((elem, idx) => {
+                {vocaList.map((elem, idx) => {
                     return (
-                        <div className="Card">
+                        <div className="Card" key={idx}>
                             <div className="card__container word">
                                 <p className="contents">{elem.word}</p>
                             </div>
@@ -28,7 +31,6 @@ const Vocabulary = (props) => {
                         </div>
                     );
                 })}
-                
             </div>
         </section>
     );
