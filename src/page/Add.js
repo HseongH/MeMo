@@ -3,8 +3,10 @@ import React, { useRef } from "react";
 
 // STORE
 import { useDispatch } from "react-redux";
-import { createVoca } from "../redux/modules/voca";
 import { history } from "../redux/configStore";
+
+// FIREBASE
+import { addVocaFB } from "../firebase/method";
 
 // STYLE
 import "../style/css/add.css";
@@ -25,7 +27,7 @@ const AddWord = (props) => {
             example: exValue.current.value
         };
 
-        dispatch(createVoca(vocaObj));
+        dispatch(addVocaFB(vocaObj));
         history.goBack();
     };
 

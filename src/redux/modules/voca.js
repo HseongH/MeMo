@@ -3,7 +3,7 @@ const READ = "voca/READ";
 const CREATE = "voca/CREATE";
 
 // ACTION CREATER
-export const readVoca = () => ({ type: READ });
+export const readVoca = (vocaObj) => ({ type: READ, vocaObj });
 export const createVoca = (vocaObj) => ({ type: CREATE, vocaObj });
 
 // INITIAL STATE
@@ -26,6 +26,7 @@ const initialState = {
 function voca(state = initialState, action) {
     switch (action.type) {
         case READ:
+            if (action.vocaObj.length) return { list : action.vocaObj };
             return state;
 
         case CREATE:

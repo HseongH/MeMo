@@ -3,13 +3,12 @@ import React from "react";
 
 // STORE
 import { useSelector } from "react-redux";
-// import { readVoca } from "../redux/modules/voca";
 
 // STYLE
 import "../style/css/vocabulary.css";
 
 const Vocabulary = (props) => {
-    const vocaList = useSelector((state) => state.voca).list;
+    const vocaList = useSelector(state => state.voca.list);
 
     return (
         <section className="section section--contents">
