@@ -10,3 +10,9 @@ $danger: #fa5252;
     display: flex;
     align-items: center;
 }
+
+@mixin textOverflow() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

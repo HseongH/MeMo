@@ -4,9 +4,10 @@ import { Route, Link, Switch, useLocation } from "react-router-dom";
 
 // COMPONENTS
 import Header from "./Header";
+import LoadingSpinner from "./Loading";
 
 // REDUX
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 // FIREBASE
 import { loadVocaFB } from "../firebase/method";
@@ -23,14 +24,17 @@ import "../style/css/main.css";
 const App = () => {
     const url = useLocation().pathname;
     const dispatch = useDispatch();
+    const isLoaded = useSelector((state) => state.voca.isLoaded);
 
     useEffect(() => {
         dispatch(loadVocaFB());
-    });
+    }, [dispatch, isLoaded]);
 
     return (
         <>
             <Header />
+
+            {isLoaded || <LoadingSpinner />}
 
             <Switch>
                 <Route path="/" component={Vocabulary} exact />

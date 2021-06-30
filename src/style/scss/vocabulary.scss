@@ -1,43 +1,60 @@
 @import "color";
 
+.section--contents .container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+}
+
 .Card {
+    width: 47%;
     padding: 40px 25px;
     box-sizing: border-box;
     border-radius: 20px;
     background: #fcf6f5;
-    margin-bottom: 30px;
+    margin: 1.5%;
     position: relative;
     @include shadow();
-
-    &:last-child {
-        margin-bottom: 100px;
-    }
 
     .card__container {
         margin-bottom: 30px;
 
-        &:last-of-type {
+        &.example {
             margin-bottom: 0;
+        }
+
+        .title {
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #666;
+            font-weight: 600;
         }
     }
 
     .word .contents {
+        @include textOverflow();
         font-size: 2rem;
     }
 
     .desc .contents {
-        font-size: 1.25rem;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        text-overflow: ellipsis;
+        word-break: keep-all;
+        line-height: 1.5;
         color: #666;
     }
 
     .example .contents {
+        @include textOverflow();
         color: $primary;
     }
 
     .btn-group {
         position: absolute;
-        top: 40px;
-        right: 25px;
+        top: 10px;
+        right: 10px;
 
         .btn {
             background: none;

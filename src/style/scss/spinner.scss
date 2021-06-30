@@ -1,0 +1,40 @@
+@import "color";
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner-wrap {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    @include flex();
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    .spinner {
+        width: 80px;
+        height: 80px;
+        background: conic-gradient($primary 0% 80%, #fff 80% 100%);
+        border-radius: 50%;
+        @include flex();
+        justify-content: center;
+        animation: spin 1s infinite linear;
+
+        .hide-spinner {
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            background: #fff;
+        }
+    }
+}

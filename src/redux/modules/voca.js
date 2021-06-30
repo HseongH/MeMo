@@ -1,11 +1,17 @@
 // ACTION
 const READ = "voca/READ";
+const READMORE = "voca/READMORE";
 const CREATE = "voca/CREATE";
 const UPDATE = "voca/UPDATE";
 const DELETE = "voca/DELETE";
 
 // ACTION CREATER
-export const readVoca = (vocaList) => ({ type: READ, vocaList });
+export const readVoca = (vocaList, date) => ({ type: READ, vocaList, date });
+export const moreVoca = (vocaList, date) => ({
+    type: READMORE,
+    vocaList,
+    date,
+});
 export const createVoca = (vocaObj) => ({ type: CREATE, vocaObj });
 export const updateVoca = (index, vocaObj) => ({
     type: UPDATE,
@@ -16,6 +22,7 @@ export const removeVoca = (index) => ({ type: DELETE, index });
 
 // INITIAL STATE
 const initialState = {
+    isLoaded: false,
     list: [
         {
             word: "Algorithm",
@@ -23,14 +30,25 @@ const initialState = {
             example: "Algorithm",
         },
     ],
+    date: 0,
 };
 
 // REDUCER
 function voca(state = initialState, action) {
     switch (action.type) {
         case READ:
-            if (action.vocaList.length) return { list: action.vocaList };
-            return state;
+            if (action.vocaList.length)
+                return {
+                    isLoaded: true,
+                    list: action.vocaList,
+                    date: action.date,
+                };
+            return { list: state.list, isLoaded: true };
+
+        case READMORE:
+            const moreVocaList = [...state.list, ...action.vocaList];
+
+            return { list: moreVocaList, date: action.date, isLoaded: true };
 
         case CREATE:
             const newVocaList = [...state.list, action.vocaObj];
@@ -39,7 +57,7 @@ function voca(state = initialState, action) {
         case UPDATE:
             const modifyList = [...state.list];
             modifyList[action.index] = action.vocaObj;
-            
+
             return { list: modifyList };
 
         case DELETE:

@@ -2,6 +2,7 @@
 import { firestore } from "./firebase";
 import {
     readVoca,
+    moreVoca,
     createVoca,
     updateVoca,
     removeVoca,
@@ -12,17 +13,45 @@ const vocabularyDB = firestore.collection("vocabulary");
 // READ
 export const loadVocaFB = () => {
     return function (dispatch) {
-        vocabularyDB.get().then((docs) => {
-            const vocaList = [];
+        const vocaList = [];
 
-            docs.forEach((doc) => {
-                if (doc.exists) {
-                    vocaList.push({ id: doc.id, ...doc.data() });
-                }
-            });
+        vocabularyDB
+            .orderBy("date", "desc")
+            .limit(6)
+            .get()
+            .then((docs) => {
+                docs.forEach((doc) => {
+                    if (doc.exists)
+                        vocaList.push({ id: doc.id, ...doc.data() });
+                });
 
-            dispatch(readVoca(vocaList));
-        });
+                const lastVisible = vocaList[vocaList.length - 1].date;
+                dispatch(readVoca(vocaList, lastVisible));
+            })
+            .catch((err) => console.error(err));
+    };
+};
+
+export const loadMoreVocaFB = (date) => {
+    return function (dispatch) {
+        const vocaList = [];
+        const previousWork = parseInt(date);
+
+        vocabularyDB
+            .orderBy("date", "desc")
+            .startAfter(previousWork)
+            .limit(6)
+            .get()
+            .then((docs) => {
+                docs.forEach((doc) => {
+                    if (doc.exists)
+                        vocaList.push({ id: doc.id, ...doc.data() });
+                });
+
+                const lastVisible = vocaList[vocaList.length - 1].date;
+                dispatch(moreVoca(vocaList, lastVisible));
+            })
+            .catch((err) => console.error(err));
     };
 };
 

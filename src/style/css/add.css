@@ -17,8 +17,17 @@
       border: solid #0063b2; }
     .Add .input--text.danger {
       border: solid #fa5252; }
-  .Add .btn--submit {
-    padding: 8px 30px;
-    box-sizing: border-box;
-    border-radius: 10px;
-    margin: 30px auto 0; }
+  .Add #desc-input {
+    height: 80px;
+    resize: vertical; }
+  .Add .btn-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px; }
+    .Add .btn-group .btn {
+      padding: 8px 30px;
+      box-sizing: border-box;
+      border-radius: 10px; }
+    .Add .btn-group .btn--cancle {
+      background: #fa5252;
+      margin-left: 15px; }

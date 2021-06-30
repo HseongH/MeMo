@@ -22,6 +22,10 @@ const isValueExistence = (event) => {
     enterArea.classList.add("danger");
 };
 
+const historyBack = () => {
+    history.goBack();
+};
+
 const AddWord = (props) => {
     const dispatch = useDispatch();
     const modifyContents = props.vocaObj;
@@ -40,34 +44,48 @@ const AddWord = (props) => {
         modifyContents ? modifyContents.example : ""
     );
 
+    const noValue = () => {
+        wordValue || wordInput.current.classList.add("danger");
+        descValue || descInput.current.classList.add("danger");
+        exValue || exInput.current.classList.add("danger");
+    };
+
     const addVoca = (event) => {
         event.preventDefault();
 
-        if (!(wordValue && descValue && exValue)) return;
+        if (!(wordValue && descValue && exValue)) {
+            noValue();
+            return;
+        }
 
         const vocaObj = {
             word: wordValue,
             desc: descValue,
             example: exValue,
+            date: Date.now(),
         };
 
         dispatch(addVocaFB(vocaObj));
-        history.goBack();
+        historyBack();
     };
 
     const modifyVoca = (event) => {
         event.preventDefault();
 
-        if (!(wordValue && descValue && exValue)) return;
+        if (!(wordValue && descValue && exValue)) {
+            noValue();
+            return;
+        }
 
         const vocaObj = {
             word: wordValue,
             desc: descValue,
             example: exValue,
+            date: Date.now(),
         };
 
         dispatch(updateVocaFB(props.index, vocaObj));
-        history.goBack();
+        historyBack();
     };
 
     return (
@@ -95,7 +113,7 @@ const AddWord = (props) => {
                     <label htmlFor="desc-input" className="input-label">
                         설명
                     </label>
-                    <input
+                    <textarea
                         id="desc-input"
                         type="text"
                         ref={descInput}
@@ -105,7 +123,7 @@ const AddWord = (props) => {
                         onChange={(event) => {
                             setDescValue(event.target.value);
                         }}
-                    />
+                    ></textarea>
 
                     <label htmlFor="ex-input" className="input-label">
                         예시
@@ -122,9 +140,19 @@ const AddWord = (props) => {
                         }}
                     />
 
-                    <button type="submit" className="btn btn--submit">
-                        {modifyContents ? "수정하기" : "추가하기"}
-                    </button>
+                    <div className="btn-group">
+                        <button type="submit" className="btn btn--submit">
+                            {modifyContents ? "수정하기" : "추가하기"}
+                        </button>
+
+                        <button
+                            type="button"
+                            className="btn btn--cancle"
+                            onClick={historyBack}
+                        >
+                            취소
+                        </button>
+                    </div>
                 </form>
             </div>
         </section>
