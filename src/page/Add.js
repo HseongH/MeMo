@@ -1,65 +1,95 @@
 // LIBRARY
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 // REDUX
 import { useDispatch } from "react-redux";
 import { history } from "../redux/configStore";
 
 // FIREBASE
-import { addVocaFB } from "../firebase/method";
+import { addVocaFB, updateVocaFB } from "../firebase/method";
 
 // STYLE
 import "../style/css/add.css";
 
+// FUNCTION
+const isValueExistence = (event) => {
+    const enterArea = event.target;
+
+    if (enterArea.value) {
+        enterArea.classList.remove("danger");
+        return;
+    }
+    enterArea.classList.add("danger");
+};
+
 const AddWord = (props) => {
     const dispatch = useDispatch();
+    const modifyContents = props.vocaObj;
 
-    const wordValue = useRef();
-    const descValue = useRef();
-    const exValue = useRef();
+    const wordInput = useRef();
+    const descInput = useRef();
+    const exInput = useRef();
 
-    const isValueExistence = (event) => {
-        const enterArea = event.target;
-
-        if (enterArea.value) {
-            enterArea.classList.remove("danger");
-            return;
-        } 
-        enterArea.classList.add("danger");
-    };
+    const [wordValue, setWordValue] = useState(
+        modifyContents ? modifyContents.word : ""
+    );
+    const [descValue, setDescValue] = useState(
+        modifyContents ? modifyContents.desc : ""
+    );
+    const [exValue, setExValue] = useState(
+        modifyContents ? modifyContents.example : ""
+    );
 
     const addVoca = (event) => {
         event.preventDefault();
 
-        const word = wordValue.current.value;
-        const desc = descValue.current.value;
-        const example = exValue.current.value;
-
-        if (!(word && desc && example)) return;
+        if (!(wordValue && descValue && exValue)) return;
 
         const vocaObj = {
-            word,
-            desc,
-            example,
+            word: wordValue,
+            desc: descValue,
+            example: exValue,
         };
 
         dispatch(addVocaFB(vocaObj));
         history.goBack();
     };
 
+    const modifyVoca = (event) => {
+        event.preventDefault();
+
+        if (!(wordValue && descValue && exValue)) return;
+
+        const vocaObj = {
+            word: wordValue,
+            desc: descValue,
+            example: exValue,
+        };
+
+        dispatch(updateVocaFB(props.index, vocaObj));
+        history.goBack();
+    };
+
     return (
         <section className="section section--input">
             <div className="container">
-                <form className="Add" onSubmit={addVoca}>
+                <form
+                    className="Add"
+                    onSubmit={modifyContents ? modifyVoca : addVoca}
+                >
                     <label htmlFor="word-input" className="input-label">
                         단어
                     </label>
                     <input
                         id="word-input"
                         type="text"
-                        ref={wordValue}
+                        ref={wordInput}
                         className="input--text"
                         onBlur={isValueExistence}
+                        value={wordValue}
+                        onChange={(event) => {
+                            setWordValue(event.target.value);
+                        }}
                     />
 
                     <label htmlFor="desc-input" className="input-label">
@@ -68,9 +98,13 @@ const AddWord = (props) => {
                     <input
                         id="desc-input"
                         type="text"
-                        ref={descValue}
+                        ref={descInput}
                         className="input--text"
                         onBlur={isValueExistence}
+                        value={descValue}
+                        onChange={(event) => {
+                            setDescValue(event.target.value);
+                        }}
                     />
 
                     <label htmlFor="ex-input" className="input-label">
@@ -79,13 +113,17 @@ const AddWord = (props) => {
                     <input
                         id="ex-input"
                         type="text"
-                        ref={exValue}
+                        ref={exInput}
                         className="input--text"
                         onBlur={isValueExistence}
+                        value={exValue}
+                        onChange={(event) => {
+                            setExValue(event.target.value);
+                        }}
                     />
 
                     <button type="submit" className="btn btn--submit">
-                        추가하기
+                        {modifyContents ? "수정하기" : "추가하기"}
                     </button>
                 </form>
             </div>

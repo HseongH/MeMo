@@ -1,5 +1,6 @@
 // LIBRARY
 import React from "react";
+import { Link } from "react-router-dom";
 
 // REDUX
 import { useSelector, useDispatch } from "react-redux";
@@ -41,9 +42,12 @@ const Vocabulary = (props) => {
                             </div>
 
                             <div className="btn-group">
-                                <button className="btn btn--modify">
-                                    <EditIcon />
-                                </button>
+                                <Link to={`/modify?index=${idx}`}>
+                                    <button className="btn btn--modify">
+                                        <EditIcon />
+                                    </button>
+                                </Link>
+
                                 <button
                                     onClick={() => {
                                         removeVoca(idx);

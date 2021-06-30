@@ -5,8 +5,13 @@ const UPDATE = "voca/UPDATE";
 const DELETE = "voca/DELETE";
 
 // ACTION CREATER
-export const readVoca = (vocaObj) => ({ type: READ, vocaObj });
+export const readVoca = (vocaList) => ({ type: READ, vocaList });
 export const createVoca = (vocaObj) => ({ type: CREATE, vocaObj });
+export const updateVoca = (index, vocaObj) => ({
+    type: UPDATE,
+    index,
+    vocaObj,
+});
 export const removeVoca = (index) => ({ type: DELETE, index });
 
 // INITIAL STATE
@@ -24,7 +29,7 @@ const initialState = {
 function voca(state = initialState, action) {
     switch (action.type) {
         case READ:
-            if (action.vocaObj.length) return { list: action.vocaObj };
+            if (action.vocaList.length) return { list: action.vocaList };
             return state;
 
         case CREATE:
@@ -32,15 +37,17 @@ function voca(state = initialState, action) {
             return { list: newVocaList };
 
         case UPDATE:
-            return state;
+            const modifyList = [...state.list];
+            modifyList[action.index] = action.vocaObj;
+            
+            return { list: modifyList };
 
         case DELETE:
-            const bucket_list = state.list.filter(
+            const vocaList = state.list.filter(
                 (elem, idx) => idx !== action.index
             );
 
-            console.log(bucket_list);
-            return { list: bucket_list };
+            return { list: vocaList };
 
         default:
             return state;

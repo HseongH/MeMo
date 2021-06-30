@@ -14,6 +14,7 @@ import { loadVocaFB } from "../firebase/method";
 // PAGES
 import Vocabulary from "../page/Vocabulary";
 import AddWord from "../page/Add";
+import ModifyWord from "../page/Modify";
 import NotFound from "../page/NotFound";
 
 // STYLE
@@ -34,6 +35,7 @@ const App = () => {
             <Switch>
                 <Route path="/" component={Vocabulary} exact />
                 <Route path="/add" component={AddWord} exact />
+                <Route path="/modify" component={ModifyWord} exact />
                 <Route component={NotFound} />
             </Switch>
 
