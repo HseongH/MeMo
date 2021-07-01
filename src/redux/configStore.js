@@ -1,10 +1,10 @@
 // LIBRARY
-import { applyMiddleware, createStore } from "redux";
-import { createBrowserHistory } from "history";
-import thunk from "redux-thunk";
+import { applyMiddleware, createStore } from 'redux';
+import { createBrowserHistory } from 'history';
+import thunk from 'redux-thunk';
 
 // REDUCER
-import rootReducer from "./modules";
+import rootReducer from './modules';
 
 // HISTORY
 export const history = createBrowserHistory();

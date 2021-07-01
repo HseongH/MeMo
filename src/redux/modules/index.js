@@ -2,7 +2,7 @@
 import { combineReducers } from 'redux';
 
 // REDUCER
-import voca from "./voca";
+import voca from './voca';
 
 const rootReducer = combineReducers({ voca });
 

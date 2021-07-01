@@ -1,52 +1,50 @@
-@import "color";
+@import 'variable';
 
 .Add {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	box-sizing: border-box;
 
-    .input-label {
-        margin-bottom: 10px;
-        text-indent: 15px;
-    }
+	.input-label {
+		margin-bottom: 10px;
+		text-indent: 15px;
+	}
 
-    .input--text {
-        margin-bottom: 20px;
-        border: none;
-        padding: 7px 10px;
-        border: 1px solid #ccc;
-        border-radius: 7px;
+	.input--text {
+		margin-bottom: 20px;
+		padding: 7px 10px;
+		border: 1px solid #ccc;
+		border-radius: 7px;
 
-        &:focus {
-            outline: none;
-            border: solid $primary;
-        }
+		&:focus {
+			outline: none;
+			border: solid $primary;
+		}
 
-        &.danger {
-            border: solid $danger;
-        }
-    }
+		&.danger {
+			border: solid $danger;
+		}
+	}
 
-    #desc-input {
-        height: 80px;
-        resize: vertical;
-    }
+	#desc-input {
+		height: 80px;
+		resize: vertical;
+	}
 
-    .btn-group {
-        display: flex;
-        justify-content: center;
-        margin-top: 30px;
+	.btn-group {
+		@include flexHorizontal();
+		margin-top: 30px;
 
-        .btn {
-            padding: 8px 30px;
-            box-sizing: border-box;
-            border-radius: 10px;
-        }
+		.btn {
+			padding: 8px 30px;
+			box-sizing: border-box;
+			border-radius: 10px;
+		}
 
-        .btn--cancle {
-            background: $danger;
-            margin-left: 15px;
-        }
-    }
+		.btn--cancle {
+			background: $danger;
+			margin-left: 15px;
+		}
+	}
 }

@@ -14,7 +14,7 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; }
   .Card .card__container {
     margin-bottom: 30px; }
-    .Card .card__container.example {
+    .Card .card__container.url {
       margin-bottom: 0; }
     .Card .card__container .title {
       font-size: 14px;
@@ -23,20 +23,20 @@
       font-weight: 600; }
   .Card .word .contents {
     overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
-    font-size: 2rem; }
+    white-space: nowrap;
+    font-size: 1.75rem; }
   .Card .desc .contents {
+    overflow: hidden;
+    text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    text-overflow: ellipsis;
+    -webkit-line-clamp: 5;
     word-break: keep-all;
     line-height: 1.5;
     color: #666; }
-  .Card .example .contents {
+  .Card .url .contents {
     overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
     color: #0063b2; }
   .Card .btn-group {
@@ -51,3 +51,7 @@
       color: #0063b2; }
     .Card .btn-group .btn--delete :hover {
       color: #fa5252; }
+
+@media (max-width: 700px) {
+  .Card {
+    width: 97%; } }

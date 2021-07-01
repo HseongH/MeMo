@@ -1,73 +1,80 @@
-@import "color";
+@import 'variable';
 
 .section--contents .container {
-    display: flex;
-    flex-wrap: wrap;
-    padding-bottom: 100px;
+	display: flex;
+	flex-wrap: wrap;
+	padding-bottom: 100px;
 }
 
 .Card {
-    width: 47%;
-    padding: 40px 25px;
-    box-sizing: border-box;
-    border-radius: 20px;
-    background: #fcf6f5;
-    margin: 1.5%;
-    position: relative;
-    @include shadow();
+	width: 47%;
+	padding: 40px 25px;
+	box-sizing: border-box;
+	border-radius: 20px;
+	background: $cardColor;
+	margin: 1.5%;
+	position: relative;
+	@include shadow();
 
-    .card__container {
-        margin-bottom: 30px;
+	.card__container {
+		margin-bottom: 30px;
 
-        &.example {
-            margin-bottom: 0;
-        }
+		&.url {
+			margin-bottom: 0;
+		}
 
-        .title {
-            font-size: 14px;
-            margin-bottom: 15px;
-            color: #666;
-            font-weight: 600;
-        }
-    }
+		.title {
+			font-size: 14px;
+			margin-bottom: 15px;
+			color: #666;
+			font-weight: 600;
+		}
+	}
 
-    .word .contents {
-        @include textOverflow();
-        font-size: 2rem;
-    }
+	.word .contents {
+		@include textOverflow();
+		white-space: nowrap;
+		font-size: 1.75rem;
+	}
 
-    .desc .contents {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-        text-overflow: ellipsis;
-        word-break: keep-all;
-        line-height: 1.5;
-        color: #666;
-    }
+	.desc .contents {
+		@include textOverflow();
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 5;
+		word-break: keep-all;
+		line-height: 1.5;
+		color: #666;
+	}
 
-    .example .contents {
-        @include textOverflow();
-        color: $primary;
-    }
+	.url .contents {
+		@include textOverflow();
+		color: $primary;
+	}
 
-    .btn-group {
-        position: absolute;
-        top: 10px;
-        right: 10px;
+	.btn-group {
+		position: absolute;
+		top: 10px;
+		right: 10px;
 
-        .btn {
-            background: none;
-            box-shadow: none;
-            padding: 8px;
-        }
+		.btn {
+			background: none;
+			box-shadow: none;
+			padding: 8px;
+		}
 
-        .btn--modify :hover {
-            color: $primary;
-        }
+		.btn--modify :hover {
+			color: $primary;
+		}
 
-        .btn--delete :hover {
-            color: $danger;
-        }
-    }
+		.btn--delete :hover {
+			color: $danger;
+		}
+	}
+}
+
+@media #{$mobile} {
+	.Card {
+		width: 97%;
+	}
 }

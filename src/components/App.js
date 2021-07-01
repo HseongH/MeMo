@@ -1,55 +1,55 @@
 // LIBRARY
-import React, { useEffect } from "react";
-import { Route, Link, Switch, useLocation } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { Route, Link, Switch, useLocation } from 'react-router-dom';
 
 // COMPONENTS
-import Header from "./Header";
-import LoadingSpinner from "./Loading";
+import Header from './Header';
+import LoadingSpinner from './Loading';
 
 // REDUX
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from 'react-redux';
 
 // FIREBASE
-import { loadVocaFB } from "../firebase/method";
+import { loadVocaFB } from '../firebase/method';
 
 // PAGES
-import Vocabulary from "../page/Vocabulary";
-import AddWord from "../page/Add";
-import ModifyWord from "../page/Modify";
-import NotFound from "../page/NotFound";
+import Vocabulary from '../page/Vocabulary';
+import AddWord from '../page/Add';
+import ModifyWord from '../page/Modify';
+import NotFound from '../page/NotFound';
 
 // STYLE
-import "../style/css/main.css";
+import '../style/css/main.css';
 
 const App = () => {
-    const url = useLocation().pathname;
-    const dispatch = useDispatch();
-    const isLoaded = useSelector((state) => state.voca.isLoaded);
+	const url = useLocation().pathname;
+	const dispatch = useDispatch();
+	const isLoaded = useSelector((state) => state.voca.isLoaded);
 
-    useEffect(() => {
-        dispatch(loadVocaFB());
-    }, [dispatch, isLoaded]);
+	useEffect(() => {
+		dispatch(loadVocaFB());
+	}, [dispatch, isLoaded]);
 
-    return (
-        <>
-            <Header />
+	return (
+		<>
+			<Header />
 
-            {isLoaded || <LoadingSpinner />}
+			{isLoaded || <LoadingSpinner />}
 
-            <Switch>
-                <Route path="/" component={Vocabulary} exact />
-                <Route path="/add" component={AddWord} exact />
-                <Route path="/modify" component={ModifyWord} exact />
-                <Route component={NotFound} />
-            </Switch>
+			<Switch>
+				<Route path="/" component={Vocabulary} exact />
+				<Route path="/add" component={AddWord} exact />
+				<Route path="/modify" component={ModifyWord} exact />
+				<Route component={NotFound} />
+			</Switch>
 
-            {url === "/" && (
-                <Link to="/add">
-                    <button className="btn btn--addVoca">+</button>
-                </Link>
-            )}
-        </>
-    );
+			{url === '/' && (
+				<Link to="/add">
+					<button className="btn btn--addVoca">+</button>
+				</Link>
+			)}
+		</>
+	);
 };
 
 export default App;
