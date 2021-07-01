@@ -55,8 +55,12 @@ function voca(state = initialState, action) {
       return { list: newVocaList };
 
     case UPDATE:
-      const modifyList = [...state.list];
-      modifyList[action.index] = action.vocaObj;
+      const modifyList = state.list.map((item) => {
+        if (item.id === action.vocaObj.id) {
+          return action.vocaObj;
+        }
+        return item;
+      });
 
       return { list: modifyList };
 

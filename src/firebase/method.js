@@ -74,6 +74,8 @@ export const updateVocaFB = (index, vocaObj) => {
       .doc(modifydata.id)
       .update(vocaObj)
       .then((res) => {
+        vocaObj = { ...vocaObj, id: modifydata.id };
+
         dispatch(updateVoca(index, vocaObj));
       })
       .catch((err) => {
