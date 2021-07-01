@@ -2,104 +2,104 @@
 
 // COMMON
 * {
-	color: $fontColor;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 1.25;
-	font-family: 'Noto Sans KR', sans-serif;
+  color: $fontColor;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 // SECTION & CONTAINER
 .section {
-	position: relative;
+  position: relative;
 
-	.container {
-		max-width: 980px;
-		margin: 0 auto;
-	}
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+  }
 }
 
 // TAG INITAILIZE
 a {
-	color: $fontColor;
-	text-decoration: none;
+  color: $fontColor;
+  text-decoration: none;
 }
 
 // BUTTON
 .btn {
-	background: $primary;
-	color: #fff;
-	border: none;
-	font-size: 16px;
-	font-weight: 600;
-	cursor: pointer;
-	@include shadow();
+  background: $primary;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  @include shadow();
 }
 
 // HEADER
 header {
-	padding: 0 1.5%;
+  padding: 0 1.5%;
 
-	.logo {
-		font-size: 3rem;
-		font-weight: 700;
-		height: 100px;
-		margin-bottom: 20px;
-		@include flexVertical();
-	}
+  .logo {
+    font-size: 3rem;
+    font-weight: 700;
+    height: 100px;
+    margin-bottom: 20px;
+    @include flexVertical();
+  }
 }
 
 // NOT FOUND
 .section--not-found {
-	.container {
-		@include flexVertical();
-		flex-direction: column;
-	}
+  .container {
+    @include flexVertical();
+    flex-direction: column;
+  }
 
-	.not-found {
-		font-size: 3rem;
-		font-weight: 700;
-		line-height: 1.5;
-		text-align: center;
-	}
+  .not-found {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+  }
 
-	.btn--not-found {
-		padding: 10px 30px;
-		border-radius: 30px;
-		margin-top: 50px;
-	}
+  .btn--not-found {
+    padding: 10px 30px;
+    border-radius: 30px;
+    margin-top: 50px;
+  }
 }
 
 .btn--addVoca {
-	@include flexSort();
-	justify-content: center;
-	position: fixed;
-	bottom: 50px;
-	left: 50%;
-	width: 50px;
-	height: 50px;
-	font-size: 30px;
-	border-radius: 50%;
-	@include transform(translateX(-50%));
+  @include flexSort();
+  justify-content: center;
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  border-radius: 50%;
+  @include transform(translateX(-50%));
 }
 
 @media #{$tab} {
-	.section {
-		.container {
-			max-width: none;
-			width: 95%;
-		}
-	}
+  .section {
+    .container {
+      max-width: none;
+      width: 95%;
+    }
+  }
 }
 
 @media #{$mobile} {
-	.section {
-		.container {
-			width: 97%;
-		}
-	}
+  .section {
+    .container {
+      width: 97%;
+    }
+  }
 
-	header .logo {
-		font-size: 2.3rem;
-	}
+  header .logo {
+    font-size: 2.3rem;
+  }
 }

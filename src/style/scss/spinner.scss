@@ -1,38 +1,38 @@
 @import 'variable';
 
 @keyframes spin {
-	from {
-		@include transform(rotate(0));
-	}
+  from {
+    @include transform(rotate(0));
+  }
 
-	to {
-		@include transform(rotate(360deg));
-	}
+  to {
+    @include transform(rotate(360deg));
+  }
 }
 
 .spinner-wrap {
-	width: 100vw;
-	height: 100vh;
-	background: #fff;
-	@include flexSort();
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  @include flexSort();
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
 
-	.spinner {
-		width: 80px;
-		height: 80px;
-		background: conic-gradient($primary 0% 80%, #fff 80% 100%);
-		border-radius: 50%;
-		@include flexSort();
-		animation: spin 1s infinite linear;
+  .spinner {
+    width: 80px;
+    height: 80px;
+    background: conic-gradient($primary 0% 80%, #fff 80% 100%);
+    border-radius: 50%;
+    @include flexSort();
+    animation: spin 1s infinite linear;
 
-		.hide-spinner {
-			width: 90%;
-			height: 90%;
-			border-radius: 50%;
-			background: #fff;
-		}
-	}
+    .hide-spinner {
+      width: 90%;
+      height: 90%;
+      border-radius: 50%;
+      background: #fff;
+    }
+  }
 }

@@ -3,38 +3,38 @@ $primary: #0063b2;
 $danger: #fa5252;
 $cardColor: #fcf6f5;
 
-$tab: "(max-width: 1080px)";
-$mobile: "(max-width: 700px)";
+$tab: '(max-width: 1080px)';
+$mobile: '(max-width: 700px)';
 
 @mixin shadow() {
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 @mixin flexVertical($sort: center) {
-	display: flex;
-	align-items: $sort;
+  display: flex;
+  align-items: $sort;
 }
 
 @mixin flexHorizontal($sort: center) {
-	display: flex;
-	justify-content: $sort;
+  display: flex;
+  justify-content: $sort;
 }
 
 @mixin flexSort($sortVer: center, $sortHoz: center) {
-	display: flex;
-	align-items: $sortVer;
-	justify-content: $sortHoz;
+  display: flex;
+  align-items: $sortVer;
+  justify-content: $sortHoz;
 }
 
 @mixin textOverflow() {
-	overflow: hidden;
-	text-overflow: ellipsis;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @mixin transform($callback) {
-	transform: $callback;
-	-o-transform: $callback;
-	-ms-transform: $callback;
-	-webkit-transform: $callback;
-	-moz-transform: $callback;
+  transform: $callback;
+  -o-transform: $callback;
+  -ms-transform: $callback;
+  -webkit-transform: $callback;
+  -moz-transform: $callback;
 }

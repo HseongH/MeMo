@@ -9,11 +9,11 @@ import { useSelector } from 'react-redux';
 import AddWord from './Add';
 
 const ModifyWord = (props) => {
-	const query = useLocation().search;
-	const index = parseInt(query.slice(1).split('=')[1]);
-	const modify = useSelector((state) => state.voca.list[index]);
+  const query = useLocation().search;
+  const index = parseInt(query.slice(1).split('=')[1]);
+  const modify = useSelector((state) => state.voca.list[index]);
 
-	return <AddWord vocaObj={modify} index={index} />;
+  return <AddWord vocaObj={modify} index={index} />;
 };
 
 export default ModifyWord;
