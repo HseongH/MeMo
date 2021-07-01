@@ -26,10 +26,11 @@ const Vocabulary = (props) => {
 	useEffect(() => {
 		const options = { threshold: 1 };
 
-		const infiniteScroll = async ([entries], observer) => {
+		const infiniteScroll = ([entries], observer) => {
 			if (entries.isIntersecting) {
-				await dispatch(loadMoreVocaFB(date));
-				observer.unobserve(entries.target);
+				new Promise((resolve) => {
+					resolve(dispatch(loadMoreVocaFB(date)));
+				}).then((res) => observer.unobserve(entries.target));
 			}
 		};
 
@@ -62,7 +63,9 @@ const Vocabulary = (props) => {
 							</div>
 
 							<div className="card__container url">
-								<a className="contents" href={elem.url} target="_blank" rel="noreferrer">바로가기</a>
+								<a className="contents" href={elem.url} target="_blank" rel="noreferrer">
+									바로가기
+								</a>
 							</div>
 
 							<div className="btn-group">
