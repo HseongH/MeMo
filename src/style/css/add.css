@@ -30,3 +30,7 @@
     .Add .btn-group .btn--cancle {
       background: #fa5252;
       margin-left: 15px; }
+
+@media (max-width: 700px) {
+  .Add {
+    padding: 0; } }

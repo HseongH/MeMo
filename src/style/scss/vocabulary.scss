@@ -75,6 +75,7 @@
 
 @media #{$mobile} {
 	.Card {
-		width: 97%;
+		width: 100%;
+		padding: 30px 15px;
 	}
 }
