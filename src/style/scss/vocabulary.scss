@@ -39,10 +39,11 @@
 
 	.desc .contents {
 		@include textOverflow();
+		white-space: pre-line;
+		word-break: break-all;
 		display: -webkit-box;
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 5;
-		word-break: keep-all;
 		line-height: 1.5;
 		color: #666;
 	}
