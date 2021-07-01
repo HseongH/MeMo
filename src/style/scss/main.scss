@@ -36,6 +36,7 @@ a {
 	@include shadow();
 }
 
+// HEADER
 header {
 	padding: 0 1.5%;
 
@@ -45,6 +46,27 @@ header {
 		height: 100px;
 		margin-bottom: 20px;
 		@include flexVertical();
+	}
+}
+
+// NOT FOUND
+.section--not-found {
+	.container {
+		@include flexVertical();
+		flex-direction: column;
+	}
+
+	.not-found {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1.5;
+		text-align: center;
+	}
+
+	.btn--not-found {
+		padding: 10px 30px;
+		border-radius: 30px;
+		margin-top: 50px;
 	}
 }
 

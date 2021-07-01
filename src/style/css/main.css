@@ -34,6 +34,22 @@ header {
     display: flex;
     align-items: center; }
 
+.section--not-found .container {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+.section--not-found .not-found {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center; }
+
+.section--not-found .btn--not-found {
+  padding: 10px 30px;
+  border-radius: 30px;
+  margin-top: 50px; }
+
 .btn--addVoca {
   display: flex;
   align-items: center;
