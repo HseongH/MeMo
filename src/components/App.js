@@ -28,7 +28,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(loadVocaFB());
-  }, [dispatch, isLoaded]);
+  }, [isLoaded]);
 
   return (
     <>
